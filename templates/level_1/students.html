@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Список студентов</title>
-</head>
-<body>
-    <h1>Список студентов</h1>
-    <!-- Здесь должен быть ваш код с использованием цикла for -->
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Список студентов</title>
+    </head>
+    <body>
+        <h1>Список студентов</h1>
+        <!-- Здесь должен быть ваш код с использованием цикла for -->
+        {% for student in students %}
+        <p>{{ student }}</p>
+        {% endfor %}
+    </body>
 </html>
