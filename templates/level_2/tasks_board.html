@@ -15,20 +15,15 @@
   <body>
     <main class="container">
       <div class="grid">
+        {% regroup tasks|dictsort:"status" by status as tasks_list %}
+        {% for status in tasks_list %}
         <div>
-          <h4>К выполнению</h4>
-          <article class="card">Задача 1</article>
-          <article class="card">Задача 2</article>
-          <article class="card">Задача 3</article>
-        </div>
-        <div>
-          <h4>В процессе</h4>
-          <article class="card">Задача 4</article>
-        </div>
-        <div>
-          <h4>Выполнено</h4>
-          <article class="card">Задача 5</article>
-        </div>
+            <h4>{{ status.grouper }}</h4>
+            {% for task in status.list %}
+                <article class="card">{{ task.title }}</article>
+            {% endfor %}
+        </div>    
+        {% endfor %}
       </div>
     </main>
   </body>
